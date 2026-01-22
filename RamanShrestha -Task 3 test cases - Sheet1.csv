@@ -1,0 +1,45 @@
+Test Cae ID,Preconditions,Test Steps,Test Data,Expected outcome,Actual outcome,status
+TC _1, user is on registration page,"1. Open demo form
+2. Enter valid username
+3. Enter valid password
+4. Enter valid credit card
+5. Enter valid phone number
+6. Click Submit","1 Username:  user123
+2 Password: Test@1234
+3 CC: 4111111111111111
+4 Phone: (123) 456-7890", Registration successful message displayed,As expected,pass
+TC_2,User is on registration page,Enter username with 4 characters and  click submit,Username: usr1,Error message: Username must be 5–15 characters,As expected,pass
+TC-3,User is on the registration page,"1 Enter 5-character username
+2 Fill other fields with valid data
+3 Click Submit",Username: user1,Username accepted,As expected,pass
+TC_04,User is on the registration page,"1 Enter 15-character username
+
+2 Fill other fields with valid data
+
+3 Click Submit",Username: user12345678901,Username accepted,Username accepted,pass
+TC_05,User is on the registration page,"1 Enter username with more than 15 characters
+
+2 Click Submit",Username: user1234567890123,Username length validation error displayed,Error message displayed,pass
+TC_06,User is on the registration page,"1 Enter password without uppercase letter
+
+2 Fill remaining fields with valid data
+
+3Click Submit",Password: test@123,Password validation error displayed,Error message displayed,pass
+TC_07,User is on the registration page,"1 Enter password without lowercase letter
+
+2 Click Submit",Password: TEST@123,Password validation error displayed,Error message displayed,pass
+TC_08,User is on the registration page,"1 Enter password without numeric character
+
+2 Click Submit",Password: Test@abcd,Password validation error displayed,Error message displayed,pass
+TC-09,User is on the registration page,"1 Enter password without special character
+
+2 Click Submit",Password: Test1234,Password validation error displayed,Error message displayed,pass
+TC-10,User is on the registration page,"1 Enter invalid credit card number
+
+2 Click Submit",Credit Card: 1234567890123456,Invalid credit card error displayed,Error message displayed,pass
+TC_11,User is on the registration page,"1 Enter unsupported credit card number
+
+2 Click Submit",Credit Card: 6011111111111117,Card type not supported error displayed,Error message displayed,pass
+TC_12,User is on the registration page,"1 Enter phone number in incorrect format
+
+2 Click Submit",Phone: 1234567890,Phone number format validation error displayed,Error message displayed,pass
